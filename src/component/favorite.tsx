@@ -65,15 +65,9 @@ export default function BeerList() {
     }
 
     const rateBeer = (value:any, beerId:any) => {
-        console.log(value)
-        console.log(beerId)
         const data = {value : value, beerId : beerId}
         dispatch(rateFavoriteBeer(data))
     }
-
-    useEffect( () => {
-        console.log(beerState)
-    }, [beerState])
 
   return (
     <Box sx={{ '& button': { m: 1 } }}>

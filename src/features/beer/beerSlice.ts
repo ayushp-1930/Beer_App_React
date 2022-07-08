@@ -18,7 +18,6 @@ export const fetchBeers = createAsyncThunk(
   "fetchBeers",
   async (page: number) => {
     try {
-      console.log(page);
       const res = await fetch(
         "https://api.punkapi.com/v2/beers?page=" + page + "&per_page=10"
       ).then((data) => data.json());
@@ -60,12 +59,10 @@ export const beerSlice = createSlice({
       state.favoriteBeer = [];
     },
     rateFavoriteBeer: (state, action) => {
-      console.log("b", action.payload);
       const index = state.favoriteBeer.indexOf(
         state.favoriteBeer.filter((x: any) => x.id == action.payload.beerId)[0]
       );
       state.favoriteBeer[index].rating = action.payload.value;
-      console.log(state.favoriteBeer);
     },
   },
   extraReducers: (builder) => {

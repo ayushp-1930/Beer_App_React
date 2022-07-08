@@ -21,13 +21,7 @@ export default function BeerList() {
         dispatch(fetchBeers(page))
     },[page])
 
-    useEffect(() => {
-        console.log(window.location.pathname)
-    },[beerState])
-
     const addToFavorite = (id: any) => {
-        console.log(id)
-        console.log(beerState.beer.data.filter( (x:any) => x.id == id ))
         dispatch(toggleFavoriteBeer(id))
     }
 
