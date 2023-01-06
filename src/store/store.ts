@@ -1,4 +1,4 @@
-import { configureStore, Store } from "@reduxjs/toolkit";
+import { configureStore } from "@reduxjs/toolkit";
 import beerReducer from "../features/beer/beerSlice";
 
 export const store = configureStore({
